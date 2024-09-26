@@ -8,8 +8,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '!README.md'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
