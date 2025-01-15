@@ -1,8 +1,10 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { Alert } from '@/components/Alert.tsx';
 import { Button } from '@/components/ui/button.tsx';
 import { getDataProtectorClient } from '@/externals/dataProtectorClient.ts';
+import { useUserStore } from '@/stores/user.store';
 import { nrlcToRlc } from '@/utils/nrlcToRlc.ts';
+import { myCollectionsQuery } from '../profile/myCollections.query';
 
 export function BuyBlock({
   protectedDataAddress,
@@ -12,6 +14,13 @@ export function BuyBlock({
   salePriceInNRLC: number;
 }) {
   const queryClient = useQueryClient();
+  const { address } = useUserStore();
+  const {
+    isLoading,
+    data: collections,
+    isError,
+    error,
+  } = useQuery(myCollectionsQuery({ address: address! }));
 
   const buyProtectedDataMutation = useMutation({
     mutationKey: ['buyProtectedData'],
@@ -20,6 +29,7 @@ export function BuyBlock({
       return dataProtectorSharing.buyProtectedData({
         protectedData: protectedDataAddress,
         price: salePriceInNRLC,
+        addToCollectionId: collections![0].id,
       });
     },
     onSuccess: () => {
@@ -28,7 +38,16 @@ export function BuyBlock({
       });
     },
   });
-
+  if (isError) {
+    return (
+      <div className="mb-6 mt-9">
+        <Alert variant="error">
+          <p>Oops, something went wrong while loading your collections.</p>
+          <p className="mt-1 text-sm">{error.toString()}</p>
+        </Alert>
+      </div>
+    );
+  }
   return (
     <div className="mb-6 mt-9">
       <div className="flex w-full items-start">
@@ -42,7 +61,7 @@ export function BuyBlock({
       </div>
       <div className="mt-7 text-center">
         <Button
-          isLoading={buyProtectedDataMutation.isPending}
+          isLoading={isLoading || buyProtectedDataMutation.isPending}
           onClick={() => buyProtectedDataMutation.mutate()}
         >
           Buy content
