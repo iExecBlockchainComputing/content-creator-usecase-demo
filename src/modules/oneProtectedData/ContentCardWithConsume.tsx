@@ -65,7 +65,7 @@ export function ContentCardWithConsume({
     mutationFn: async () => {
       setStatusMessages({});
 
-      const { dataProtectorSharing } = await getDataProtectorClient();
+      const { dataProtectorSharing, dataProtector } = await getDataProtectorClient();
 
       if (content[protectedDataAddress]) {
         showContent(content[protectedDataAddress]);
@@ -79,7 +79,7 @@ export function ContentCardWithConsume({
       if (completedTaskId) {
         try {
           const { result } =
-            await dataProtectorSharing.getResultFromCompletedTask({
+            await dataProtector.getResultFromCompletedTask({
               taskId: completedTaskId,
               path: 'content',
             });
