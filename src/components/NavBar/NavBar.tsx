@@ -9,11 +9,11 @@ import { useUserStore } from '@/stores/user.store.ts';
 import { LOCAL_STORAGE_PREFIX } from '@/utils/localStorage.ts';
 import { cn } from '@/utils/style.utils.ts';
 import iExecLogo from '../../assets/iexec-logo.svg';
+import { useLoginLogout } from '../../hooks/useLoginLogout.ts';
 import { AddressChip } from '../NavBar/AddressChip.tsx';
 import { Button } from '../ui/button.tsx';
 import { Label } from '../ui/label.tsx';
 import { Switch } from '../ui/switch.tsx';
-import { useLoginLogout } from './useLoginLogout.ts';
 
 export function NavBar({ className }: { className?: string }) {
   const { isConnected, address } = useUserStore();
