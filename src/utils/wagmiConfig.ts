@@ -1,18 +1,17 @@
-import { createWeb3Modal } from '@web3modal/wagmi/react';
-import { http, createConfig, CreateConnectorFn } from 'wagmi';
+import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
+import { createAppKit } from '@reown/appkit/react';
+import { http, CreateConnectorFn } from 'wagmi';
 import { injected, walletConnect } from 'wagmi/connectors';
 import { bellecour } from './bellecourChainConfig.ts';
 import { InjectedWalletProvider } from './injected-wallet-provider/injected-wallet-provider.ts';
 import { EIP6963ProviderDetail } from './injected-wallet-provider/types.ts';
 
 // Wagmi Client initialization
-if (!import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID) {
-  throw new Error(
-    'You need to provide VITE_WALLET_CONNECT_PROJECT_ID env variable'
-  );
+if (!import.meta.env.VITE_REOWN_PROJECT_ID) {
+  throw new Error('You need to provide VITE_REOWN_PROJECT_ID env variable');
 }
 
-export const projectId = import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID!;
+export const projectId = import.meta.env.VITE_REOWN_PROJECT_ID!;
 
 // WalletConnect metadata
 const metadata = {
@@ -69,12 +68,13 @@ preservedAvailableProviderDetails.forEach((providerDetails) => {
   );
 });
 
-export const wagmiConfig = createConfig({
-  chains: [bellecour],
+export const wagmiAdapter = new WagmiAdapter({
+  networks: [bellecour],
   multiInjectedProviderDiscovery: false,
   transports: {
     [bellecour.id]: http(),
   },
+  projectId,
   connectors,
 });
 
@@ -88,10 +88,17 @@ const featuredWalletIds = [
 ];
 
 // Create modal
-createWeb3Modal({
-  wagmiConfig,
+createAppKit({
+  adapters: [wagmiAdapter],
+  networks: [bellecour],
   projectId,
-  defaultChain: bellecour,
+  defaultNetwork: bellecour,
   featuredWalletIds,
+  features: {
+    email: false,
+    socials: false,
+  },
   allWallets: 'HIDE',
+  allowUnsupportedChain: false,
+  enableWalletGuide: false,
 });

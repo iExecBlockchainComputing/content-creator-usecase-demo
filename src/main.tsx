@@ -11,7 +11,7 @@ import { RouterProvider } from '@tanstack/react-router';
 import { Analytics } from '@vercel/analytics/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { WagmiConfig } from 'wagmi';
+import { WagmiProvider } from 'wagmi';
 import { ConditionalRollbarWrapper } from '@/components/ConditionalRollbarWrapper.tsx';
 import { initQueryClient } from '@/utils/initQueryClient.ts';
 import { initRollbarAlerting } from '@/utils/initRollbarAlerting.ts';
@@ -19,7 +19,7 @@ import { Toaster } from './components/ui/toaster.tsx';
 import './index.css';
 import { initRouter } from './initRouter.ts';
 import { DisclaimerModal } from './modules/DisclaimerModal.tsx';
-import { wagmiConfig } from './utils/wagmiConfig.ts';
+import { wagmiAdapter } from './utils/wagmiConfig.ts';
 
 const { rollbar, rollbarConfig } = initRollbarAlerting();
 
@@ -36,7 +36,7 @@ declare module '@tanstack/react-router' {
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <WagmiConfig config={wagmiConfig}>
+    <WagmiProvider config={wagmiAdapter.wagmiConfig}>
       <QueryClientProvider client={queryClient}>
         <DisclaimerModal />
         <ConditionalRollbarWrapper
@@ -46,7 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <RouterProvider router={router} basepath={import.meta.env.BASE_URL} />
         </ConditionalRollbarWrapper>
       </QueryClientProvider>
-    </WagmiConfig>
+    </WagmiProvider>
     <DisclaimerModal />
     <Toaster />
     <Analytics />

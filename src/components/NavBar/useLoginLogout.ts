@@ -1,22 +1,26 @@
-import { useWeb3Modal } from '@web3modal/wagmi/react';
+import { useAppKit } from '@reown/appkit/react';
 import { useDisconnect } from 'wagmi';
 import { useContentStore } from '@/stores/content.store.ts';
 
 // import { resetCompletedTaskIdsCache } from '@/utils/localStorageContentMap.ts';
 
 export function useLoginLogout() {
-  const { open } = useWeb3Modal();
+  const { open } = useAppKit();
   const { disconnectAsync } = useDisconnect();
   const { resetContent } = useContentStore();
 
   const logout = async () => {
-    await disconnectAsync();
-    resetContent();
-    // resetCompletedTaskIdsCache();
+    try {
+      await disconnectAsync();
+      resetContent();
+      // resetCompletedTaskIdsCache();
+    } catch (err) {
+      console.error('Failed to logout:', err);
+    }
   };
 
   const login = () => {
-    open();
+    open({ view: 'Connect' });
   };
 
   return {
