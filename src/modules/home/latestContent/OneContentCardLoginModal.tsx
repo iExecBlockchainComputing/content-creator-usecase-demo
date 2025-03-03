@@ -1,7 +1,6 @@
 import { clsx } from 'clsx';
 import { useState } from 'react';
 import { Lock } from 'react-feather';
-import { useLoginLogout } from '@/components/NavBar/useLoginLogout.ts';
 import { Button } from '@/components/ui/button.tsx';
 import {
   Dialog,
@@ -12,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog.tsx';
+import { useLoginLogout } from '@/hooks/useLoginLogout';
 import { getCardVisualNumber } from '@/utils/getCardVisualNumber.ts';
 import styles from './OneContentCard.module.css';
 
