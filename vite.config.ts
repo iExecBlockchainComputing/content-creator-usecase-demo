@@ -11,6 +11,11 @@ export default defineConfig(({ mode }) => {
   console.log('[vite] Building with base path:', basePath);
   return {
     base: basePath,
+    define: {
+      'process.env.NEXT_PUBLIC_SECURE_SITE_ORIGIN': JSON.stringify(
+        env.NEXT_PUBLIC_SECURE_SITE_ORIGIN || 'https://secure.walletconnect.org'
+      ),
+    },
     plugins: [react(), TanStackRouterVite()],
     resolve: {
       alias: {
