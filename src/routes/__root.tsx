@@ -4,7 +4,7 @@ import {
   Navigate,
   useScrollRestoration,
 } from '@tanstack/react-router';
-import { useWatchWagmiAccount } from '../utils/watchWagmiAccount.ts';
+import { useWatchWagmiAccount } from '../hooks/useWatchWagmiAccount.ts';
 
 export const Route = createRootRoute({
   component: () => <RootComponent />,
