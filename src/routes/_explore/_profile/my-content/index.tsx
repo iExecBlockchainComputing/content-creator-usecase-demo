@@ -82,7 +82,7 @@ function MyContent() {
           <DocLink className="mx-auto mt-6">
             dataprotector-sdk / Method called:{' '}
             <a
-              href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/misc/getCollectionsByOwner.html"
+              href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/read/getCollectionsByOwner"
               target="_blank"
               rel="noreferrer"
               className="text-primary hover:underline"

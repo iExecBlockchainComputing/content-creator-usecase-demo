@@ -308,7 +308,7 @@ export function ProtectedDataPreview() {
             <DocLink className="mt-6">
               dataprotector-sdk / Method called:{' '}
               <a
-                href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/misc/getProtectedDataInCollections.html"
+                href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections"
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary hover:underline"
@@ -325,7 +325,7 @@ export function ProtectedDataPreview() {
               <DocLink className="mt-6">
                 dataprotector-sdk / Method called:{' '}
                 <a
-                  href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/renting/rentProtectedData.html"
+                  href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/renting/rentProtectedData"
                   target="_blank"
                   rel="noreferrer"
                   className="text-primary hover:underline"
@@ -350,7 +350,7 @@ export function ProtectedDataPreview() {
               <DocLink className="mt-6">
                 dataprotector-sdk / Method called:{' '}
                 <a
-                  href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/selling/buyProtectedData.html"
+                  href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/selling/buyProtectedData"
                   target="_blank"
                   rel="noreferrer"
                   className="text-primary hover:underline"

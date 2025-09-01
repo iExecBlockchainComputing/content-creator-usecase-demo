@@ -78,7 +78,7 @@ export function ActiveRentals() {
           <DocLink className="mx-6">
             dataprotector-sdk / Method called:{' '}
             <a
-              href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/misc/getRentals.html"
+              href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/read/getRentals"
               target="_blank"
               rel="noreferrer"
               className="text-primary hover:underline"

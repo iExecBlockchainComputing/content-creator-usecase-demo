@@ -260,7 +260,7 @@ export function ContentCardWithConsume({
       <DocLink className="mt-6 w-full">
         dataprotector-sdk / Method called:{' '}
         <a
-          href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/consume/consumeProtectedData.html"
+          href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/consume/consumeProtectedData"
           target="_blank"
           rel="noreferrer"
           className="text-primary hover:underline"

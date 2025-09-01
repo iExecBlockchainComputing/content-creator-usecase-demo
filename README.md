@@ -2,7 +2,7 @@
 
 ![Screenshot](Screenshot.png)
 
-This project is mainly used as a demo of what can be accomplished with iExec Data Protector SDK, and specifically its ["Sharing" module](https://tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing).
+This project is mainly used as a demo of what can be accomplished with iExec Data Protector SDK, and specifically its ["Sharing" module](https://docs.iex.ec/references/dataProtector/dataProtectorSharing).
 
 ## Project initiated with:
 
