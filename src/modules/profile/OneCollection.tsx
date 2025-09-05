@@ -35,7 +35,7 @@ export function OneCollection({
       <DocLink className="mb-14 mt-6 w-full">
         dataprotector-sdk / Method called:{' '}
         <a
-          href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams.html"
+          href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams"
           target="_blank"
           rel="noreferrer"
           className="text-primary hover:underline"

@@ -56,7 +56,7 @@ export function NavBar({ className }: { className?: string }) {
             <div className="mt-1 rounded-xl border border-primary px-2.5 py-px text-xs text-primary">
               <span className="font-bold">DEMO APP</span> for{' '}
               <a
-                href="https://beta.tools.docs.iex.ec/tools/dataProtector.html"
+                href="https://docs.iex.ec/references/dataProtector"
                 target="_blank"
                 className="inline-flex items-center hover:underline"
               >

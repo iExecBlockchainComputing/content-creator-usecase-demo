@@ -248,7 +248,7 @@ function ChooseMonetization() {
                   You can't change your choice through this demo app, but you
                   can through the SDK. See{' '}
                   <a
-                    href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting.html"
+                    href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting"
                     target="_blank"
                     className="text-primary hover:underline"
                   >
@@ -294,7 +294,7 @@ function ChooseMonetization() {
             <DocLink className="mb-14 mt-6 max-w-[calc(686px+2.5rem)]">
               dataprotector-sdk / Method called:{' '}
               <a
-                href="https://beta.tools.docs.iex.ec/tools/dataProtector/dataProtectorSharing/misc/getProtectedDataInCollections.html"
+                href="https://docs.iex.ec/references/dataProtector/dataProtectorSharing/misc/getProtectedDataInCollections"
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary hover:underline"
