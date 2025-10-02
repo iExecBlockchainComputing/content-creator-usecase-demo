@@ -30,9 +30,6 @@ export async function initDataProtectorSDK({
   const dataProtectorOptions = {
     dataprotectorContractAddress: import.meta.env.VITE_DATAPROTECTOR_ADDRESS,
     sharingContractAddress: import.meta.env.VITE_DATAPROTECTOR_SHARING_ADDRESS,
-    subgraphUrl: import.meta.env.VITE_DATAPROTECTOR_SUBGRAPH_URL,
-    ipfsGateway: import.meta.env.VITE_IPFS_GATEWAY_URL,
-    ipfsNode: import.meta.env.VITE_IPFS_NODE_URL,
     iexecOptions,
   };
 
